@@ -1,0 +1,24 @@
+{
+  "generated": "2026-10-31 21:54:58",
+  "elapsed_sec": 783.5,
+  "root": "/workspace/mc",
+  "disk": {
+    "total": 274877906944,
+    "used": 127101329408,
+    "free": 146091581440
+  },
+  "counters": {
+    "total": 38323,
+    "by_sha1": 14525,
+    "by_sha1_ok": 14525,
+    "by_zip": 21895,
+    "by_zip_ok": 21895,
+    "no_ref": 1903,
+    "zero": 0
+  },
+  "failures": [],
+  "ref_count": 14525,
+  "manifest": "/workspace/mc_md5_manifest.txt",
+  "resolved": 364,
+  "final_note": "初始校验发现 364 个异常（361 客户端内容错误 + 3 加载器损坏），已全部按官方哈希/源重新下载并复核通过。"
+}

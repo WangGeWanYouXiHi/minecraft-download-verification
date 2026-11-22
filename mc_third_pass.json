@@ -1,0 +1,9 @@
+{
+  "client_total": 920,
+  "client_ok": 920,
+  "client_mismatch": [],
+  "client_no_ref": 10,
+  "loader_ok": 3,
+  "loader_bad": [],
+  "third_pass_all_ok": true
+}

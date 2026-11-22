@@ -1,0 +1,8 @@
+{
+  "original_failures": 364,
+  "fixed": 364,
+  "still_bad": [],
+  "disk_free_gib": 136.06,
+  "disk_total_gib": 256.0,
+  "disk_used_pct": 46.2
+}

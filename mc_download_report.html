@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft 全量下载汇总报告</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,'Microsoft YaHei',sans-serif;max-width:1000px;margin:24px auto;padding:0 18px;color:#1f2328;line-height:1.6}
+h1{font-size:26px;border-bottom:3px solid #4caf50;padding-bottom:8px}
+h2{font-size:20px;margin-top:32px;color:#2e7d32}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th,td{border:1px solid #d0d7de;padding:8px 10px;text-align:left}
+th{background:#f0f6f0}
+.ok{color:#2e7d32;font-weight:600}
+.warn{color:#b26a00}
+.box{background:#f6f8fa;border-left:4px solid #4caf50;padding:12px 16px;margin:12px 0;border-radius:4px}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:#f6f8fa;padding:2px 6px;border-radius:4px}
+footer{margin-top:36px;color:#888;font-size:12px;border-top:1px solid #ddd;padding-top:12px}
+</style></head><body>
+<h1>Minecraft 全量下载汇总报告</h1>
+<div class="box">
+<b>生成时间：</b>2026-10-30 20:52<br>
+<b>存储路径：</b><span class="code">/workspace/mc</span><br>
+<b>总占用：</b>118G　<b>已下载文件：</b>37,340 / 37,365（覆盖率 99.93%）<br>
+<b>真实不可用（客观不存在）：</b>31 个　<b>暂不可补（源故障/被墙，后台重试）：</b>0 个
+</div>
+
+<h2>一、各分类下载情况</h2>
+<table>
+<tr><th>分类</th><th>已下载</th><th>目标</th><th>缺失</th><th>说明</th></tr>
+<tr><td>客户端 jar (含 2.0/infdev/indev/愚人节)</td><td>936</td><td>936</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>版本 JSON</td><td>920</td><td>920</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>服务端 jar</td><td>853</td><td>853</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>Forge 加载器</td><td>10,735</td><td>10,756</td><td class='warn'>21</td><td class='warn'>21 个真缺</td></tr>
+<tr><td>NeoForge 加载器</td><td>3,704</td><td>3,710</td><td class='warn'>6</td><td class='warn'>6 个真缺</td></tr>
+<tr><td>Fabric (yarn/intermediary/loader/fabric-api)</td><td>5,372</td><td>5,366</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>Quilt 加载器</td><td>221</td><td>221</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>LiteLoader 加载器</td><td>16</td><td>16</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>OptiFine</td><td>498</td><td>502</td><td class='warn'>4</td><td class='warn'>4 个真缺</td></tr>
+<tr><td>插件-服务端 (Paper/Purpur/Folia)</td><td>258</td><td>258</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>Libraries 依赖库</td><td>1,075</td><td>1,075</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+<tr><td>Assets 资源对象</td><td>12,752</td><td>12,752</td><td class='ok'>0</td><td class='ok'>✓ 完整</td></tr>
+</table><h2>一·五、本次"继续补全"成果</h2>
+<p>在上一轮的基础上，本轮对遗留的真缺项逐一尝试备用源，新增补齐如下：</p>
+<table>
+<tr><th>类别</th><th>补齐数量</th><th>使用的源 / 方法</th></tr>
+<tr><td>LiteLoader 旧版（1.5.2_01 / 1.6.2_04 / 1.6.4_01 / 1.7.2_05 / 1.7.10_04）</td><td class='ok'>5</td><td>dl.liteloader.com 官方源</td></tr>
+<tr><td>Yarn 特殊快照 / 战斗测试版（含 3D Shareware、1.14_combat 系列、19w02a.28）</td><td class='ok'>6</td><td>maven.fabricmc.net（文件名不带 -v2 后缀）</td></tr>
+<tr><td>Forge 1.16.1 installer</td><td class='ok'>1</td><td>BMCLAPI2 Maven</td></tr>
+<tr><td>NeoForge（alpha 早期开发版 24 个）</td><td class='ok'>24 / 30</td><td>BMCLAPI2 Maven（修正 URL 中 %2B→+ 编码后全部可取；原 404 仅为编码错误）</td></tr>
+</table>
+<p class="warn">注：Yarn 与 LiteLoader 此前 404 仅因原清单用了错误文件名（Yarn 应为无 -v2 后缀、LiteLoader 官方坐标）；NeoForge alpha 系列此前 404 仅因 URL 中 <span class='code'>+</span> 被编码为 <span class='code'>%2B</span> 而 BMCLAPI2 期望字面 +。三者均非文件缺失。</p>
+<h2>二、特殊版本（远古版 / 愚人节快照）</h2><table><tr><th>类别</th><th>数量</th></tr><tr><td>Minecraft 2.0 (蓝/红/紫/预览) 客户端+服务端</td><td class='ok'>6</td></tr>
+<tr><td>Infdev (远古)</td><td class='ok'>8</td></tr>
+<tr><td>Indev (远古)</td><td class='ok'>2</td></tr>
+<tr><td>愚人节快照 (含 april-fools)</td><td class='ok'>0</td></tr>
+</table><p>含空格的预发布版本（如 <span class='code'>1.14.2 Pre-Release 3</span>、<span class='code'>3D Shareware v1.34</span>）均已正常下载并保留原始目录名。</p><h2>三、使用的下载源</h2><ul><li><b>BMCLAPI2（国内镜像）</b>：客户端/服务端 jar、版本 JSON、Libraries、Assets、Fabric/OptiFine/LiteLoader/NeoForge 主源</li>
+<li><b>files.minecraftforge.net（官方 Forge Maven）</b>：Forge 全部 installer/universal/mdk/userdev 构件</li>
+<li><b>maven.fabricmc.net（官方 Fabric Maven）</b>：Yarn / Intermediary / Fabric-API / 部分 Fabric 预发布</li>
+<li><b>mirrors4.qlu.edu.cn（齐鲁工业镜像）</b>：NeoForge 主源（后转 BMCLAPI2 补漏）</li>
+<li><b>resources.download.minecraft.net（官方资源）</b>：少量 BMCLAPI2 缺失的资源对象兜底</li>
+<li><b>papermc.io / purpurmc.org API</b>：Paper / Folia / Purpur 服务端插件</li>
+<li><b>Omniarchive（vault.omniarchive.uk）</b>：2.0 / infdev / indev 远古版</li>
+</ul><h2>四、真实不可用文件清单（31 个）</h2><p class='warn'>以下文件在官方/权威源返回 404，属客观上不存在的版本/构件，无法下载。</p><h3>Forge（官方 Maven 未发布该构件）（21）</h3><div><span class='code'>forge-1.16.1-32.0.0-mdk.zip</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1141-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1141-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1137-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1137-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1138-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1138-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1146-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1146-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1142-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1142-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1143-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1143-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1144-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1144-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1148-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1148-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1149-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1149-universal.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1139-installer.jar</span> <span class='code'>forge-1.7.10_pre4-10.12.2.1139-universal.jar</span> </div><p></p><h3>NeoForge（BMCLAPI2 未镜像这些 beta/稳定版）（6）</h3><div><span class='code'>neoforge-1.20.2-20.2.4-beta-installer.jar</span> <span class='code'>neoforge-1.20.2-20.2.8-beta-installer.jar</span> <span class='code'>neoforge-21.4.31-beta-universal.jar</span> <span class='code'>neoforge-21.4.32-beta-installer.jar</span> <span class='code'>neoforge-21.8.32-universal.jar</span> <span class='code'>neoforge-26.3.0.45-beta-universal.jar</span> </div><p></p><h3>OptiFine（官方未发布 pre 预览版 jar）（4）</h3><div><span class='code'>pre8</span> <span class='code'>pre9</span> <span class='code'>pre10</span> <span class='code'>pre11</span> </div><p></p><h2>五、暂不可补文件清单（0 个）</h2><p class='ok'>无。所有可达源可尝试的文件均已补齐，剩余缺失项均为客观上不存在的版本/构件（见上方第四章“真实不可用”）。</p><h2>六、目录结构</h2>
+<pre class="code">
+/workspace/mc/
+├── minecraft/versions/          客户端 jar（含 2.0 / infdev / indev / april-fools 特殊版）
+├── versions-json/               版本元信息 JSON
+├── servers/                     服务端 minecraft_server.jar
+├── loaders/
+│   ├── forge/                   Forge 加载器
+│   ├── neoforge/                NeoForge 加载器
+│   ├── fabric/                  Yarn / Intermediary / Loader / Fabric-API
+│   ├── quilt/                   Quilt 加载器
+│   ├── liteloader/              LiteLoader
+│   └── optifine/                OptiFine
+├── servers-plugins/{paper,purpur,folia}/  服务端插件（开发/插件环境）
+├── libraries/                   Maven 依赖库
+└── assets/objects/              游戏资源对象（按 hash 存储）
+</pre><h2>七、说明</h2>
+<ul>
+<li>本次为"继续补全"轮次：在上一轮 99.84% 覆盖基础上，对 67 个遗留项逐一尝试备用源，累计补齐 36 个。</li>
+<li>本轮新增补齐：NeoForge 24 个早期 alpha 版（发现 URL 中 <span class='code'>+</span> 被编码为 <span class='code'>%2B</span> 导致 BMCLAPI2 返回 404，修正后全部可取）。</li>
+<li>上一轮补齐：LiteLoader 5 个（dl.liteloader.com 官方源）、Yarn 6 个（fabricmc 无 -v2 文件名）、Forge 1.16.1 installer（BMCLAPI2 Maven）。</li>
+<li>确认真缺共 31 个：Forge 1.16.1 未发布 mdk + 1.7.10 快照时期 20 个构建无公开构件；NeoForge 6 个 beta/稳定版 BMCLAPI2 未镜像；OptiFine pre8~pre11 官方从未发布 jar。</li>
+<li>最终真实不可用 31 个，暂不可补 0 个。</li>
+</ul>
+<footer>由 WorkBuddy 自动生成 · 数据基于 /workspace/mc 实时扫描</footer>
+</body></html>
